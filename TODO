@@ -1,0 +1,12 @@
+TODO:
+1 - Find libs for the project, namely ones that can:
+     get the size of the display
+     overlay an application with a transparent bg over a window
+     measure the distance between two points
+     find resolution of display
+     (you can probably find a conversion rate for each type of monitor and figure it out from there tbh)
+     (Use the method window.getLocationOnScreen to get coords)
+     The only issue is the fact that he coords might differ between devices, but using the converter should fix that
+
+
+2 - 
