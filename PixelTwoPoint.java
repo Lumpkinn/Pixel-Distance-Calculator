@@ -1,11 +1,12 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
+import java.util.*;
 import javax.swing.*;
+
 public class PixelTwoPoint extends JFrame
 {
-     private JButton exit = new JButton();
+     private final JButton exit = new JButton();
      //gets the size of the window
      Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
      public PixelTwoPoint()
@@ -30,6 +31,7 @@ public class PixelTwoPoint extends JFrame
 class CursorListener implements MouseListener
 {    private int numClick = 0;
      private double distanceBetweenPoints;
+     @SuppressWarnings("FieldMayBeFinal")
      private ArrayList<Point>  pointinfo = new ArrayList<>();
      @Override
      public void mouseClicked(MouseEvent arg0)

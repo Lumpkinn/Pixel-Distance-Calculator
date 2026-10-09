@@ -1,10 +1,12 @@
 //This class holds the Base of the GUI Elements in the project. This will be used to let the user pick which measurement method they want to use. 
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+@SuppressWarnings("unused")
 
 public class PixelMeasureGUI extends JWindow
 {
+    Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
     JButton ruler = new JButton("Ruler");
     JButton point = new JButton("Two Point");
     JButton exit = new JButton("Quit");
@@ -13,7 +15,8 @@ public class PixelMeasureGUI extends JWindow
      setSize(250,40);
      //housekeeping
      setLayout(new FlowLayout());
-     
+     //Make sure that this gets the info f
+     setLocation((WindowSize.width)/2, WindowSize.height);
      //check if the device can check the stuff
 
      //Manages the ruler
@@ -34,15 +37,14 @@ public class PixelMeasureGUI extends JWindow
      }
 
 
-     public int ruler()
+     public void ruler()
      {
           System.out.println("yo");
-          return 0;
      }
 
      public void point()
      {
-          System.out.println("gurt");
+          
           PixelTwoPoint ptp = new PixelTwoPoint();
           ptp = null;
           System.gc();
