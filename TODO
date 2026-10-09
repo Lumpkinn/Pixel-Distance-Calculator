@@ -7,6 +7,12 @@ TODO:
      (you can probably find a conversion rate for each type of monitor and figure it out from there tbh)
      (Use the method window.getLocationOnScreen to get coords)
      The only issue is the fact that he coords might differ between devices, but using the converter should fix that
+     
 
 
 2 - 
+     ensure that PixelTwoPoint records the two most recent coords.(maybe use points and point2d to make it only 2 variables, as opposed to storing 4 for each x and y val)
+
+     consider adding a line between two points? 
+
+     

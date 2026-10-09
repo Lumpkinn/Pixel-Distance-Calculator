@@ -1,18 +1,20 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import javax.swing.*;
 public class PixelTwoPoint extends JFrame
 {
+     private JButton exit = new JButton();
      //gets the size of the window
      Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
      public PixelTwoPoint()
      {
+          exit.addActionListener((ActionEvent e) -> {setVisible(false);});
           //full screen see-through window
           setUndecorated(true);
           //mess with the line below to change the opacity 
           setOpacity(.5f);
-          
           setSize(WindowSize.width, WindowSize.height);
           setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           CursorListener CursorPos = new CursorListener();
@@ -20,30 +22,23 @@ public class PixelTwoPoint extends JFrame
           setVisible(true);
 
      }
-     //pass the coords. Idrk what class would fit, and its not like i can do research rn, so make sure to replace l8r
-     
-     public static void main(String args[])
+     public void destructor()
      {
-          // make sure to calculate the distance here btw
-          PixelTwoPoint ptp = new PixelTwoPoint();
-          
-          //again, i know that this is causing an error, thats for future you to fix
+          add(exit);
      }
 }
-
 class CursorListener implements MouseListener
 {    private int numClick = 0;
-
+     private double distanceBetweenPoints;
+     private ArrayList<Point>  pointinfo = new ArrayList<>();
      @Override
      public void mouseClicked(MouseEvent arg0)
      {
-          ArrayList<Double>  pointinfo = new ArrayList<>();
-          PointerInfo Cursor = MouseInfo.getPointerInfo();
-          Point CursorInfo = Cursor.getLocation();
           
-          //be careful, make sure that this can actually convert the distance to pixels
-          double CursorX = CursorInfo.getX();
-          double CursorY = CursorInfo.getY(); 
+          Point Cursor = MouseInfo.getPointerInfo().getLocation();
+          
+          pointinfo.add(Cursor);
+          //be careful, make sure that this can actually convert the distance to pixels 
           //make sure to take the input and converting it to a point (Tl;Dr, get coords). 
           
           if (numClick > 1)
@@ -52,20 +47,16 @@ class CursorListener implements MouseListener
           }
           else
           {
-               
-               pointinfo.add(CursorX);
-               pointinfo.add(CursorY);
-               if (pointinfo.size() >= 3)
+               if (pointinfo.size() != 1)
                {
                //distance is the sqrt of the sum of the differemces on the x and y plane
                //calc
-               double distanceBetweenPoints = Math.sqrt(pointinfo.get(0) - pointinfo.get(2)) + (pointinfo.get(1) - pointinfo.get(3)); 
+               distanceBetweenPoints = (Point2D.distance((pointinfo.get(0).x), pointinfo.get(0).y, pointinfo.get(1).x, pointinfo.get(1).y)); 
                
                JOptionPane.showMessageDialog(null, ("The distance between the two points is" + distanceBetweenPoints));
-               
-               }
+               pointinfo.clear();
           }
-     System.out.print("Method had been ran. ArrayList values are: x = " + pointinfo.get(0) +" y = " +pointinfo.get(1));
+          }     
      }
           
      
@@ -79,4 +70,11 @@ class CursorListener implements MouseListener
      public void mouseReleased(MouseEvent arg0) { }
      @Override
      public void mousePressed(MouseEvent e) { }
+
+
+ public static void main(String args[])
+     {
+          PixelTwoPoint ptp = new PixelTwoPoint();
+          
+     }
 }

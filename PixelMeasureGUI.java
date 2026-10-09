@@ -40,10 +40,12 @@ public class PixelMeasureGUI extends JWindow
           return 0;
      }
 
-     public int point()
+     public void point()
      {
           System.out.println("gurt");
-          return 0;
+          PixelTwoPoint ptp = new PixelTwoPoint();
+          ptp = null;
+          System.gc();
      }
      public static void main(String args[])
      {
