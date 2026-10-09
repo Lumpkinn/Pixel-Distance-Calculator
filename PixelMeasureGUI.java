@@ -12,14 +12,18 @@ public class PixelMeasureGUI extends JWindow
     JButton exit = new JButton("Quit");
     public PixelMeasureGUI()
     {
-     setSize(250,40);
      //housekeeping
      setLayout(new FlowLayout());
-     //Make sure that this gets the info f
+     setSize(250,40);
+     setBackground(Color.lightGray);
+     point.setBackground(Color.gray);
+     exit.setBackground(Color.darkGray);
+     exit.setForeground(Color.white);
+
      setLocation((WindowSize.width)/2, WindowSize.height);
      //check if the device can check the stuff
 
-     //Manages the ruler
+     //Manages the ruler (See TODO)
      ruler.addActionListener((ActionEvent e) -> {this.ruler();});
      
      //manages the point selections
@@ -30,7 +34,6 @@ public class PixelMeasureGUI extends JWindow
 
 
      //adds the elements to the frame
-     add(ruler);
      add(point);
      add(exit);
      setVisible(true);
@@ -44,10 +47,7 @@ public class PixelMeasureGUI extends JWindow
 
      public void point()
      {
-          
           PixelTwoPoint ptp = new PixelTwoPoint();
-          ptp = null;
-          System.gc();
      }
      public static void main(String args[])
      {

@@ -1,15 +1,14 @@
 TODO:
 !OVERALL!
-1 - make the gui look better 
+
 
 !TWO-POINT!
 2 - Two-Point
-     Have the window close after the pop-up shows up
      consider adding a line between two points? 
-     Maybe make the popup look a little better?
 
 !RULER!
 3 - RULER
+     !!!!NOT HAPPENING FOR THIS VERSION (I might in the future, but for now, its a big fat no.)
      Figure out how to make a draggable object inside of the window,
      make sprite for ruler
      make sure sprite has correct dimensions, and that the conversion rate works.

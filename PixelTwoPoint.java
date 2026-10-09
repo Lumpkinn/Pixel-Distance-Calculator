@@ -23,16 +23,13 @@ public class PixelTwoPoint extends JFrame
           setVisible(true);
 
      }
-     public void destructor()
-     {
-          add(exit);
-     }
 }
 class CursorListener implements MouseListener
 {    private int numClick = 0;
      private double distanceBetweenPoints;
      @SuppressWarnings("FieldMayBeFinal")
      private ArrayList<Point>  pointinfo = new ArrayList<>();
+     private static JOptionPane test = new JOptionPane();
      @Override
      public void mouseClicked(MouseEvent arg0)
      {
@@ -40,6 +37,7 @@ class CursorListener implements MouseListener
           Point Cursor = MouseInfo.getPointerInfo().getLocation();
           
           pointinfo.add(Cursor);
+           
           //be careful, make sure that this can actually convert the distance to pixels 
           //make sure to take the input and converting it to a point (Tl;Dr, get coords). 
           
@@ -55,8 +53,11 @@ class CursorListener implements MouseListener
                //calc
                distanceBetweenPoints = (Point2D.distance((pointinfo.get(0).x), pointinfo.get(0).y, pointinfo.get(1).x, pointinfo.get(1).y)); 
                
-               JOptionPane.showMessageDialog(null, ("The distance between the two points is" + distanceBetweenPoints));
+               test.setBackground(Color.lightGray);
+               test.setForeground(Color.DARK_GRAY);
+               test.showMessageDialog(null, ("The distance between the two points is: " + (int)distanceBetweenPoints + " Pixels"));
                pointinfo.clear();
+               System.exit(0);
           }
           }     
      }
@@ -73,10 +74,4 @@ class CursorListener implements MouseListener
      @Override
      public void mousePressed(MouseEvent e) { }
 
-
- public static void main(String args[])
-     {
-          PixelTwoPoint ptp = new PixelTwoPoint();
-          
-     }
 }
