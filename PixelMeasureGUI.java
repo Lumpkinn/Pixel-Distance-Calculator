@@ -1,5 +1,4 @@
 //This class holds the Base of the GUI Elements in the project. This will be used to let the user pick which measurement method they want to use. 
-
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.*;
@@ -15,6 +14,8 @@ public class PixelMeasureGUI extends JWindow
      //housekeeping
      setLayout(new FlowLayout());
      
+     //check if the device can check the stuff
+
      //Manages the ruler
      ruler.addActionListener((ActionEvent e) -> {this.ruler();});
      

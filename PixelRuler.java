@@ -9,7 +9,8 @@ public class PixelRuler extends JFrame
      super();
      setLayout(new GridBagLayout());
      setSize(10,10);
-     //gets the resoulution of the screen
+     //make an overlay over the screen
 
+     
      }
 }
