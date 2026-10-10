@@ -10,6 +10,8 @@ public class PixelMeasureGUI extends JWindow
     JButton reference = new JButton("Reference");
     JButton point = new JButton("Two Point");
     JButton exit = new JButton("Quit");
+    JButton Ruler = new JButton("Ruler");
+
     public PixelMeasureGUI()
     {
      //housekeeping
@@ -24,6 +26,8 @@ public class PixelMeasureGUI extends JWindow
      //check if the device can check the stuff
 
      //Manages the ruler (See TODO)
+     Ruler.addActionListener((ActionEvent e) -> {this.Ruler();});
+     
      reference.addActionListener((ActionEvent e) -> {this.reference();});
      
      //manages the point selections
@@ -37,22 +41,18 @@ public class PixelMeasureGUI extends JWindow
      add(point);
      add(reference);
      add(exit);
-
+     add(Ruler);
      setVisible(true);
      }
 
-
+     public void Ruler()
+     {PixelRuler PRule = new PixelRuler();}
      public void reference()
-     {
-          PixelRef Pr = new PixelRef();
-     }
+     {PixelRef Pr = new PixelRef();}
 
      public void point()
-     {
-          PixelTwoPoint ptp = new PixelTwoPoint();
-     }
+     {PixelTwoPoint ptp = new PixelTwoPoint();}
      public static void main(String args[])
-     {
-          PixelMeasureGUI pm = new PixelMeasureGUI();
-     }
+     {PixelMeasureGUI pm = new PixelMeasureGUI();}
+
 }
