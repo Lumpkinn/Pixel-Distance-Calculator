@@ -52,10 +52,7 @@ class CursorListener implements MouseListener
                //distance is the sqrt of the sum of the differemces on the x and y plane
                //calc
                distanceBetweenPoints = (Point2D.distance((pointinfo.get(0).x), pointinfo.get(0).y, pointinfo.get(1).x, pointinfo.get(1).y)); 
-               
-               test.setBackground(Color.lightGray);
-               test.setForeground(Color.DARK_GRAY);
-               test.showMessageDialog(null, ("The distance between the two points is: " + (int)distanceBetweenPoints + " Pixels"));
+               JOptionPane.showMessageDialog(null, ("The distance between the two points is: " + (int)distanceBetweenPoints + " Pixels"));
                pointinfo.clear();
                System.exit(0);
           }
