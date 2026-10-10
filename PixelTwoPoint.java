@@ -9,6 +9,7 @@ public class PixelTwoPoint extends JFrame
      private final JButton exit = new JButton();
      //gets the size of the window
      Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
+     
      public PixelTwoPoint()
      {
           exit.addActionListener((ActionEvent e) -> {setVisible(false);});

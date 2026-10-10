@@ -7,14 +7,14 @@ import javax.swing.*;
 public class PixelMeasureGUI extends JWindow
 {
     Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
-    JButton ruler = new JButton("Ruler");
+    JButton reference = new JButton("Reference");
     JButton point = new JButton("Two Point");
     JButton exit = new JButton("Quit");
     public PixelMeasureGUI()
     {
      //housekeeping
      setLayout(new FlowLayout());
-     setSize(250,40);
+     setSize(350,40);
      setBackground(Color.lightGray);
      point.setBackground(Color.gray);
      exit.setBackground(Color.darkGray);
@@ -24,7 +24,7 @@ public class PixelMeasureGUI extends JWindow
      //check if the device can check the stuff
 
      //Manages the ruler (See TODO)
-     ruler.addActionListener((ActionEvent e) -> {this.ruler();});
+     reference.addActionListener((ActionEvent e) -> {this.reference();});
      
      //manages the point selections
      point.addActionListener((ActionEvent e) -> {this.point();});
@@ -35,14 +35,16 @@ public class PixelMeasureGUI extends JWindow
 
      //adds the elements to the frame
      add(point);
+     add(reference);
      add(exit);
+
      setVisible(true);
      }
 
 
-     public void ruler()
+     public void reference()
      {
-          System.out.println("yo");
+          PixelRef Pr = new PixelRef();
      }
 
      public void point()
