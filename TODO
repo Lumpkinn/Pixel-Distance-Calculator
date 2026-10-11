@@ -1,14 +1,8 @@
 TODO:
 !OVERALL!
-BUG: If you click back on the frame, youre stuck :/
+     make sure that all of the passed values don't lead to errors if the user gives the wrong data type
 
 !TWO-POINT!
 2 - Two-Point
      consider adding a line between two points? 
 
-!RULER!
-3 - RULER
-     !!!!NOT HAPPENING FOR THIS VERSION (I might in the future, but for now, its a big fat no.)
-     Figure out how to make a draggable object inside of the window,
-     make sprite for ruler
-     make sure sprite has correct dimensions, and that the conversion rate works.
