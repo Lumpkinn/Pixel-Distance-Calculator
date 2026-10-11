@@ -9,8 +9,16 @@ public class PixelRef extends JFrame
           setLocationRelativeTo(null);
           String length = JOptionPane.showInputDialog(this, "How long do you want your reference window to be? ");
           String height = JOptionPane.showInputDialog(this, "How tall do you want your reference window to be? ");
-          setSize((Integer.parseInt(length)), (Integer.parseInt(height)));
+          try
+          {
+               setSize((Integer.parseInt(length)), (Integer.parseInt(height)));
+          }
+          catch(Exception e)
+          {
+               JOptionPane.showMessageDialog(this, "Please enter a number");
+          }
           setVisible(true);
+          
           try
           {
                Thread.sleep(5000);

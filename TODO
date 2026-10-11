@@ -1,9 +1,8 @@
 TODO:
 !OVERALL!
-     make sure that all of the passed values don't lead to errors if the user gives the wrong data type
-     round the 
+     add border to the GUI elements
+     replace ruler window with a JOptionpane
 
 !TWO-POINT!
 2 - Two-Point
      consider adding a line between two points? 
-

@@ -14,8 +14,16 @@ public class PixelConverter extends JFrame
           //prompts user for size in px
           String PixelLength = JOptionPane.showInputDialog(null, "What is the value you want converted?");
           //make sure to put this in a try-catch to see if its actually an int. otherwise, use recusrsion to start the whole thing over again
-          int ConvertVal = Integer.parseInt(PixelLength);
-          
+          int ConvertVal = 0;
+          try
+          {
+               ConvertVal = Integer.parseInt(PixelLength);
+          }
+          catch(Exception e)
+          {
+               JOptionPane.showMessageDialog(null, "Please enter an integer value.");
+               System.exit(0);
+          }
           //converting the actual values
           if (ConversionUnit.equals("Inches"))
           {

@@ -1,29 +1,28 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.*;
 
 import java.util.ArrayList;
 //For the markings, maybe i could make an array of JLabels that will mark off every 100 px?
 
-
+//make it so that the ruler dissapears when you click on it.
 
 public class PixelRuler extends JFrame
 {
      private Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
      public PixelRuler()
      {
-     JButton HorizontalButton = new JButton("Horizontal Ruler");
-     JButton VerticalButton = new JButton("Vertical Ruler");
-
-     //Basic formatting/housekeeping
-     setLayout(new FlowLayout());
+     Object[] RulerChoice = {"Vertical", "Horizontal"};
+     Object RulerPosition = JOptionPane.showInputDialog(null, "Choose one", "Ruler Orientation", JOptionPane.INFORMATION_MESSAGE, null, RulerChoice, RulerChoice[0]);
      
-     add(HorizontalButton);
-     add(VerticalButton);
-     HorizontalButton.addActionListener((ActionEvent e) -> {this.horizontalRuler();});
-     VerticalButton.addActionListener((ActionEvent e) -> {this.verticalRuler();});
-     
+     if (RulerPosition == RulerChoice[0])
+     {
+          this.verticalRuler();
+     }
+     else
+     {
+          this.horizontalRuler();
+     }
      pack();
      setVisible(true);
      }
