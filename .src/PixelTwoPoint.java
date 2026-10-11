@@ -30,7 +30,7 @@ class CursorListener implements MouseListener
      private double distanceBetweenPoints;
      @SuppressWarnings("FieldMayBeFinal")
      private ArrayList<Point>  pointinfo = new ArrayList<>();
-     private static JOptionPane test = new JOptionPane();
+     //private static JOptionPane test = new JOptionPane();
      @Override
      public void mouseClicked(MouseEvent arg0)
      {
