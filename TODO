@@ -1,6 +1,7 @@
 TODO:
 !OVERALL!
      make sure that all of the passed values don't lead to errors if the user gives the wrong data type
+     round the 
 
 !TWO-POINT!
 2 - Two-Point

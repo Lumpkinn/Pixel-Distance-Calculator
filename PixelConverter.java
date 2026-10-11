@@ -20,18 +20,18 @@ public class PixelConverter extends JFrame
           if (ConversionUnit.equals("Inches"))
           {
                double InchVal = ConvertVal / ConvertInch; 
-               JOptionPane.showMessageDialog(null, (PixelLength + " in Inches would be " + InchVal));
+               JOptionPane.showMessageDialog(null, (PixelLength + " in Inches would be " + (int)InchVal));
 
           }
           else if(ConversionUnit.equals("Centimeters"))
           {
                double CMVal = ConvertVal / ConvertCM;
-               JOptionPane.showMessageDialog(null, (PixelLength + " in Centimeters would be " + CMVal));
+               JOptionPane.showMessageDialog(null, (PixelLength + " in Centimeters would be " + (int)CMVal));
           }
           else
           {
                double MMVal = ConvertVal / ConvertMM;
-               JOptionPane.showMessageDialog(null, (PixelLength + " in Millimeters would be " + MMVal));
+               JOptionPane.showMessageDialog(null, (PixelLength + " in Millimeters would be " + (int)MMVal));
           }
           
      }
