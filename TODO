@@ -1,7 +1,6 @@
-TODO:
-!OVERALL!
-     add border to the GUI elements
-     replace ruler window with a JOptionpane
+Comment out code, for the ones that come after
+check if pc can handle opaque windows
+make it so ruler dissapears on click
 
 !TWO-POINT!
 2 - Two-Point

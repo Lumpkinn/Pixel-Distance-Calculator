@@ -1,45 +1,42 @@
-//This class holds the Base of the GUI Elements in the project. This will be used to let the user pick which measurement method they want to use. 
+//This class holds the Base of the GUI Elements in the project. This will be used to let the user pick which tool they'd like to use
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-@SuppressWarnings("unused")
 
 public class PixelMeasureGUI extends JWindow
 {
+   //get the window size (important for different aspect ratios)
     Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
+    //buttons that will direct to the seperate tools
     JButton reference = new JButton("Reference");
     JButton point = new JButton("Two Point");
     JButton exit = new JButton("Quit");
     JButton ruler = new JButton("Ruler");
     JButton Conversion = new JButton("Convert");
-
     public PixelMeasureGUI()
     {
      //housekeeping
      setLayout(new FlowLayout());
      setSize(480,40);
+     this.getRootPane().setBorder(BorderFactory.createLineBorder(Color.black));
+     //colors!
      setBackground(Color.lightGray);
      point.setBackground(Color.gray);
      exit.setBackground(Color.darkGray);
-     exit.setForeground(Color.white);
-     //go look for other colors to go with the monochrome stuff
      reference.setBackground(new Color(105,105,105));
      ruler.setBackground(new Color(147,147,147));
      Conversion.setBackground(new Color(53,53,53));
+     //text colors!
      Conversion.setForeground(Color.white);
-
+     exit.setForeground(Color.white);
      setLocation((WindowSize.width)/2, WindowSize.height);
-     //check if the device can check the stuff
+     //check if the device can use opaque windows. if not, politely let them know that the program probably will have some issues due to this
 
-     //actionlisteners
+     //action listeners
      ruler.addActionListener((ActionEvent e) -> {this.Ruler();});
      reference.addActionListener((ActionEvent e) -> {this.reference();});
-     //manages the point selections
      point.addActionListener((ActionEvent e) -> {this.point();});
-     
-     //Manages the exit button to quit the program
      exit.addActionListener((ActionEvent e) -> {System.exit(0);});
-   
      Conversion.addActionListener((ActionEvent e)-> {this.convert();});
 
      //adds the elements to the frame
@@ -51,17 +48,22 @@ public class PixelMeasureGUI extends JWindow
 
      setVisible(true);
      }
-
+     // methods for actionlisteners (theres probably a better way to do that tbh)
      public void Ruler()
-     {PixelRuler PRule = new PixelRuler();}
+     {@SuppressWarnings("unused")
+     PixelRuler PRule = new PixelRuler();}
      public void reference()
-     {PixelRef Pr = new PixelRef();}
+     {@SuppressWarnings("unused")
+     PixelRef Pr = new PixelRef();}
      public void convert()
-     {PixelConverter PC = new PixelConverter();}
+     {@SuppressWarnings("unused")
+     PixelConverter PC = new PixelConverter();}
      public void point()
-     {PixelTwoPoint ptp = new PixelTwoPoint();}
+     {@SuppressWarnings("unused")
+     PixelTwoPoint ptp = new PixelTwoPoint();}
      public static void main(String args[])
      {
+        @SuppressWarnings("unused")
         PixelMeasureGUI pm = new PixelMeasureGUI();
      }
 

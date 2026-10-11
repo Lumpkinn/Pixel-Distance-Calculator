@@ -6,13 +6,11 @@ import javax.swing.*;
 
 public class PixelTwoPoint extends JFrame
 {
-     private final JButton exit = new JButton();
      //gets the size of the window
      Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
      
      public PixelTwoPoint()
      {
-          exit.addActionListener((ActionEvent e) -> {setVisible(false);});
           //full screen see-through window
           setUndecorated(true);
           //mess with the line below to change the opacity 
@@ -45,6 +43,15 @@ class CursorListener implements MouseListener
           if (numClick > 1)
           {
                numClick = 0; 
+               try
+               {
+                    Thread.sleep(5000);
+               }
+               catch(InterruptedException e)
+               {
+                    System.out.print("An error has occured. Closing program");
+                    System.exit(0);
+               }
           }
           else
           {
@@ -53,7 +60,11 @@ class CursorListener implements MouseListener
                //distance is the sqrt of the sum of the differemces on the x and y plane
                //calc
                distanceBetweenPoints = (Point2D.distance((pointinfo.get(0).x), pointinfo.get(0).y, pointinfo.get(1).x, pointinfo.get(1).y)); 
-               JOptionPane.showMessageDialog(null, ("The distance between the two points is: " + (int)distanceBetweenPoints + " Pixels"));
+               JOptionPane PointInfo = new JOptionPane(("The distance between the two points is: " + (int)distanceBetweenPoints + " Pixels"), JOptionPane.INFORMATION_MESSAGE);
+               JDialog PointDialog = PointInfo.createDialog("Distance Between Points");
+               PointDialog.setAlwaysOnTop(true);
+               PointDialog.setModal(true);
+               PointDialog.setVisible(true);
                pointinfo.clear();
                System.exit(0);
           }

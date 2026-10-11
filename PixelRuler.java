@@ -1,20 +1,19 @@
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.*;
 
-import java.util.ArrayList;
-//For the markings, maybe i could make an array of JLabels that will mark off every 100 px?
-
-//make it so that the ruler dissapears when you click on it.
-
-public class PixelRuler extends JFrame
+public class PixelRuler 
 {
-     private Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
+     //Gets dimensions of screen
+     private final Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
+     @SuppressWarnings("OverridableMethodCallInConstructor")
      public PixelRuler()
      {
+     // choices for JOptionPrompt
      Object[] RulerChoice = {"Vertical", "Horizontal"};
      Object RulerPosition = JOptionPane.showInputDialog(null, "Choose one", "Ruler Orientation", JOptionPane.INFORMATION_MESSAGE, null, RulerChoice, RulerChoice[0]);
-     
+     // if else to see what user chose
      if (RulerPosition == RulerChoice[0])
      {
           this.verticalRuler();
@@ -23,24 +22,22 @@ public class PixelRuler extends JFrame
      {
           this.horizontalRuler();
      }
-     pack();
-     setVisible(true);
      }
-
+     //method for making horizontal ruler
      public void horizontalRuler()
           {
                JFrame HoriRuler = new JFrame();
-               //make sure that this takes the Length of the users screen
+               //Housekeeping
                HoriRuler.setLayout(new FlowLayout());
                HoriRuler.setSize(WindowSize.width,250);
                HoriRuler.setUndecorated(true);
                //mess with the line below to change the opacity 
                HoriRuler.setOpacity(.5f);
-               //arraylist that creates a new jlabel every 100 px, appends it to the ruler, and adds it as well
-               
-               ArrayList<JLabel> HoriMarks = new ArrayList<JLabel>();
-
+               //arraylist that creates a new jlabel every 100 px
+               ArrayList<JLabel> HoriMarks = new ArrayList<>();
+               //counter var for while loop
                int i = 0;
+               //while loop that makes new JLabel every 100 px, appends it to the arraylist, and adds it to jframe as well
                while (i < (int) WindowSize.width)
                     
                     {
@@ -58,7 +55,7 @@ public class PixelRuler extends JFrame
                }
                HoriRuler.setVisible(true);
           }
-
+     // same as horizontal ruler, see above for comments
      public void verticalRuler()
      {
      JFrame VertiRuler = new JFrame();
@@ -68,7 +65,7 @@ public class PixelRuler extends JFrame
      VertiRuler.setOpacity(.5f);
      VertiRuler.setSize(250,WindowSize.height);
      //this is meant to handle the lines for the ruler. make sure that they get placed evenly, and show them as markings with a factor of 10. (so small marks for every 10 px, large for every 100)
-     ArrayList<JLabel> VertiMarks = new ArrayList<JLabel>();
+     ArrayList<JLabel> VertiMarks = new ArrayList<>();
      int i = 0;
      while (i < (int) WindowSize.height)
           {
