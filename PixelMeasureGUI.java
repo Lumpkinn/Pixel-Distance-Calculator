@@ -1,10 +1,10 @@
-//This class holds the Base of the GUI Elements in the project. This will be used to let the user pick which tool they'd like to use
+//This class holds the Base of the GUI elements in the project. This will be used to let the user pick which tool they'd like to use.
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
+ import java.awt.event.*;
+ import javax.swing.*;
 public class PixelMeasureGUI extends JWindow
 {
+
    //get the window size (important for different aspect ratios)
     Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
     //buttons that will direct to the seperate tools
@@ -13,10 +13,12 @@ public class PixelMeasureGUI extends JWindow
     JButton exit = new JButton("Quit");
     JButton ruler = new JButton("Ruler");
     JButton Conversion = new JButton("Convert");
+    //Constructor
     public PixelMeasureGUI()
     {
      //housekeeping
      setLayout(new FlowLayout());
+     setLocation((WindowSize.width)/2, WindowSize.height);
      setSize(480,40);
      this.getRootPane().setBorder(BorderFactory.createLineBorder(Color.black));
      //colors!
@@ -29,8 +31,6 @@ public class PixelMeasureGUI extends JWindow
      //text colors!
      Conversion.setForeground(Color.white);
      exit.setForeground(Color.white);
-     setLocation((WindowSize.width)/2, WindowSize.height);
-     //check if the device can use opaque windows. if not, politely let them know that the program probably will have some issues due to this
 
      //action listeners
      ruler.addActionListener((ActionEvent e) -> {this.Ruler();});
@@ -39,7 +39,7 @@ public class PixelMeasureGUI extends JWindow
      exit.addActionListener((ActionEvent e) -> {System.exit(0);});
      Conversion.addActionListener((ActionEvent e)-> {this.convert();});
 
-     //adds the elements to the frame
+     //adds the elements to the JFrame.
      add(point);
      add(ruler);
      add(reference);
@@ -48,7 +48,7 @@ public class PixelMeasureGUI extends JWindow
 
      setVisible(true);
      }
-     // methods for actionlisteners (theres probably a better way to do that tbh)
+     // methods for ActionListeners.
      public void Ruler()
      {@SuppressWarnings("unused")
      PixelRuler PRule = new PixelRuler();}
@@ -61,10 +61,9 @@ public class PixelMeasureGUI extends JWindow
      public void point()
      {@SuppressWarnings("unused")
      PixelTwoPoint ptp = new PixelTwoPoint();}
-     public static void main(String args[])
-     {
-        @SuppressWarnings("unused")
-        PixelMeasureGUI pm = new PixelMeasureGUI();
+     public static void main(String[] args) {
+         @SuppressWarnings("unused")
+         PixelMeasureGUI mainInstance = new PixelMeasureGUI();
      }
 
 }

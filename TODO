@@ -1,7 +1,6 @@
-Comment out code, for the ones that come after
-check if pc can handle opaque windows
+check if pc can handle opaque windows (make issue on github)
 make it so ruler dissapears on click
 
 !TWO-POINT!
 2 - Two-Point
-     consider adding a line between two points? 
+     consider adding a line between two points?

@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Point2D;
-import java.util.*;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class PixelTwoPoint extends JFrame
@@ -70,7 +70,6 @@ class CursorListener implements MouseListener
           }
           }     
      }
-          
      
      @Override
      public void mouseEntered(MouseEvent arg0) { }

@@ -24,6 +24,7 @@ public class PixelRuler
      }
      }
      //method for making horizontal ruler
+     int i = 0;
      public void horizontalRuler()
           {
                JFrame HoriRuler = new JFrame();
@@ -36,7 +37,7 @@ public class PixelRuler
                //arraylist that creates a new jlabel every 100 px
                ArrayList<JLabel> HoriMarks = new ArrayList<>();
                //counter var for while loop
-               int i = 0;
+               i = 0;
                //while loop that makes new JLabel every 100 px, appends it to the arraylist, and adds it to jframe as well
                while (i < (int) WindowSize.width)
                     
@@ -66,7 +67,7 @@ public class PixelRuler
      VertiRuler.setSize(250,WindowSize.height);
      //this is meant to handle the lines for the ruler. make sure that they get placed evenly, and show them as markings with a factor of 10. (so small marks for every 10 px, large for every 100)
      ArrayList<JLabel> VertiMarks = new ArrayList<>();
-     int i = 0;
+     i = 0;
      while (i < (int) WindowSize.height)
           {
                JLabel marking = new JLabel(Integer.toString(i));
