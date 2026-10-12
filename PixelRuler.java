@@ -5,7 +5,7 @@ import javax.swing.border.*;
 
 public class PixelRuler 
 {
-     //Gets dimensions of screen
+     //Gets dimensions of screen.
      private final Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
      @SuppressWarnings("OverridableMethodCallInConstructor")
      public PixelRuler()
@@ -56,27 +56,32 @@ public class PixelRuler
                }
                HoriRuler.setVisible(true);
           }
-     // same as horizontal ruler, see above for comments
+     // same as horizontal ruler
      public void verticalRuler()
      {
      JFrame VertiRuler = new JFrame();
      VertiRuler.setLayout(new FlowLayout());
      //make sure that this takes the height of the users screen
-     VertiRuler.setUndecorated(true); 
+     VertiRuler.setUndecorated(true);
+     //controlls opacity of the ruler 
      VertiRuler.setOpacity(.5f);
+     //sets the ruler to the height of the window, and 250 pixels across.
      VertiRuler.setSize(250,WindowSize.height);
      //this is meant to handle the lines for the ruler. make sure that they get placed evenly, and show them as markings with a factor of 10. (so small marks for every 10 px, large for every 100)
      ArrayList<JLabel> VertiMarks = new ArrayList<>();
      i = 0;
+     //makes a new JLabel for every 100 px on the screen. 
      while (i < (int) WindowSize.height)
           {
                JLabel marking = new JLabel(Integer.toString(i));
                VertiMarks.add(marking);
                marking.setLocation(250,i);
+               //makes the buffer between each label. (Could also be done through static positioning, but this is less work)
                marking.setBorder(new EmptyBorder(0,100,100,100));
                i+=100;
           }
-            
+     //Adds all of the marks inside of the ArrayList to the window.
+     
      for(int j = 0; j < VertiMarks.size(); j++)
      {
           VertiRuler.add(VertiMarks.get(j));

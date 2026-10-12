@@ -1,11 +1,10 @@
 //This class holds the Base of the GUI elements in the project. This will be used to let the user pick which tool they'd like to use.
 import java.awt.*;
- import java.awt.event.*;
- import javax.swing.*;
+import java.awt.event.*;
+import javax.swing.*;
 public class PixelMeasureGUI extends JWindow
 {
-
-   //get the window size (important for different aspect ratios)
+   //Get the window size (important for different aspect ratios).
     Dimension WindowSize = Toolkit.getDefaultToolkit().getScreenSize();
     //buttons that will direct to the seperate tools
     JButton reference = new JButton("Reference");
@@ -40,12 +39,12 @@ public class PixelMeasureGUI extends JWindow
      Conversion.addActionListener((ActionEvent e)-> {this.convert();});
 
      //adds the elements to the JFrame.
-     add(point);
      add(ruler);
+     add(point);
      add(reference);
      add(Conversion);
      add(exit);
-
+     setAlwaysOnTop(true);
      setVisible(true);
      }
      // methods for ActionListeners.
